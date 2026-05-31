@@ -12,7 +12,37 @@ let computerScore = 0;
 const div = document.createElement("div");
 document.body.appendChild(div);
 
+// function playRound(humanChoice, computerChoice) {
+//   let result;
+
+//   if (humanChoice === computerChoice) {
+//     result = "Draw";
+//   } else if (
+//     (humanChoice === "Stone" && computerChoice === "Scissor") ||
+//     (humanChoice === "Paper" && computerChoice === "Stone") ||
+//     (humanChoice === "Scissor" && computerChoice === "Paper")
+//   ) {
+//     humanScore++;
+//     result = "You win this round!";
+//   } else {
+//     computerScore++;
+//     result = "Computer wins this round!";
+//   }
+
+//   div.innerHTML = `
+//     <p>You: ${humanChoice}</p>
+//     <p>Computer: ${computerChoice}</p>
+//     <p>${result}</p>
+//     <p>Score: ${humanScore} - ${computerScore}</p>
+//   `;
+// }
+
 function playRound(humanChoice, computerChoice) {
+  // Don't allow more rounds after game is over
+  if (humanScore >= 5 || computerScore >= 5) {
+    return;
+  }
+
   let result;
 
   if (humanChoice === computerChoice) {
@@ -29,14 +59,22 @@ function playRound(humanChoice, computerChoice) {
     result = "Computer wins this round!";
   }
 
+  let winner = "";
+
+  if (humanScore === 5) {
+    winner = "<h2>You won the game! 🎉</h2>";
+  } else if (computerScore === 5) {
+    winner = "<h2>Computer won the game! 🤖</h2>";
+  }
+
   div.innerHTML = `
     <p>You: ${humanChoice}</p>
     <p>Computer: ${computerChoice}</p>
     <p>${result}</p>
     <p>Score: ${humanScore} - ${computerScore}</p>
+    ${winner}
   `;
 }
-
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button => {
