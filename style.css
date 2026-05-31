@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  font-family: Arial, sans-serif;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  background: #3b82f6;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-4px);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}

@@ -9,8 +9,26 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+// const div = document.createElement("div");
+// document.body.appendChild(div);
+const gameContainer = document.createElement("div");
+gameContainer.style.display = "flex";
+gameContainer.style.flexDirection = "column";
+gameContainer.style.alignItems = "center";
+gameContainer.style.gap = "30px";
+
 const div = document.createElement("div");
-document.body.appendChild(div);
+div.style.color = "white";
+div.style.fontSize = "1.5rem";
+div.style.textAlign = "center";
+
+document.body.appendChild(gameContainer);
+document.body.style.display = "flex";
+document.body.style.flexDirection = "column";
+document.body.style.alignItems = "center";
+document.body.style.gap = "30px";
+document.body.style.flexDirection = "column";
+gameContainer.appendChild(div);
 
 // function playRound(humanChoice, computerChoice) {
 //   let result;
